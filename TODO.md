@@ -1,1 +1,1 @@
-[ ] Cant see score history unter fixed buttons
+[ ] Cant see score history under fixed buttons
