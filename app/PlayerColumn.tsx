@@ -18,7 +18,7 @@ export default function PlayerColumn({
   setScoreHistory,
 }: PlayerColumnProps) {
   return (
-    <div className="w-full bg-zinc-800 min-w-24">
+    <div className="w-full bg-zinc-800 min-w-20">
       <input
         className="w-full text-center py-3 bg-zinc-900 text-xl outline-none focus:bg-zinc-950 transition duration-200"
         placeholder="Name"
@@ -40,6 +40,10 @@ export default function PlayerColumn({
           onClick={() => setPhase(phase + 1)}
         />
       </div>
+      <div className="w-full text-center py-3 text-lg border-t-2 border-zinc-900">
+        Pts: <br />
+        {scoreHistory.reduce((total, score) => total + score, 0)}
+      </div>
       <div className="h-full">
         {scoreHistory.map((score, index) => (
           <input
@@ -55,9 +59,6 @@ export default function PlayerColumn({
             }}
           />
         ))}
-      </div>
-      <div className="w-full text-center py-3 text-lg">
-        = {scoreHistory.reduce((total, score) => total + score, 0)}
       </div>
     </div>
   );
