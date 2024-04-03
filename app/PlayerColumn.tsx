@@ -42,7 +42,7 @@ export default function PlayerColumn({
       </div>
       <div className="w-full text-center py-3 text-lg border-t-2 border-zinc-900">
         Pts: <br />
-        {scoreHistory.reduce((total, score) => total + score, 0)}
+        {scoreHistory.reduce((total, score) => total + score, 0) || 0}
       </div>
       <div className="h-full">
         {scoreHistory.map((score, index) => (
@@ -55,6 +55,7 @@ export default function PlayerColumn({
             onChange={(event) => {
               const newScoreHistory = [...scoreHistory];
               newScoreHistory[index] = parseInt(event.target.value);
+              event.target.value = newScoreHistory[index].toString();
               setScoreHistory(newScoreHistory);
             }}
           />
