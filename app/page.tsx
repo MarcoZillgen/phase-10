@@ -32,7 +32,7 @@ export default function Page() {
             phase={player.phase}
             setPhase={(phase: number) => {
               const newPlayers = [...players];
-              newPlayers[index].phase = phase;
+              newPlayers[index].phase = Math.min(10, Math.max(1, phase));
               setPlayers(newPlayers);
             }}
             scoreHistory={player.scoreHistory}
