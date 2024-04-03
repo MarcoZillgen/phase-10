@@ -62,7 +62,11 @@ export default function Page() {
           type="button"
           value="Add Player"
           onClick={() => {
-            setPlayers([...players, { name: "", phase: 1, scoreHistory: [] }]);
+            setPlayers([...players, {
+              name: "", phase: 1, scoreHistory: [
+                ...players[0].scoreHistory.map(() => 0)
+              ]
+            }]);
           }}
         />
       </div>
