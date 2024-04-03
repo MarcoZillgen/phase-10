@@ -1,0 +1,1 @@
+[ ] Cant see score history unter fixed buttons
