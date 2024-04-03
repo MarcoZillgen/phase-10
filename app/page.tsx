@@ -18,7 +18,7 @@ export default function Page() {
   const [players, setPlayers] = useState<Player[]>(EXAMPLE_PLAYERS);
 
   return (
-    <div className="h-full w-full bg-zinc-950 text-zinc-100">
+    <div className="h-full w-full bg-zinc-950 text-zinc-100 overflow-y-hidden">
       <div className="flex gap-[2px] h-full">
         {players.map((player, index) => (
           <PlayerColumn
@@ -44,7 +44,7 @@ export default function Page() {
           />
         ))}
       </div>
-      <div className="flex gap-[2px] absolute bottom-0 w-full">
+      <div className="flex fixed bottom-0 w-full">
         <input
           className="w-1/2 bg-blue-800  text-center py-3 text-xl outline-none hover:bg-blue-700 transition duration-200"
           type="button"
@@ -62,11 +62,14 @@ export default function Page() {
           type="button"
           value="Add Player"
           onClick={() => {
-            setPlayers([...players, {
-              name: "", phase: 1, scoreHistory: [
-                ...players[0].scoreHistory.map(() => 0)
-              ]
-            }]);
+            setPlayers([
+              ...players,
+              {
+                name: "",
+                phase: 1,
+                scoreHistory: [...players[0].scoreHistory.map(() => 0)],
+              },
+            ]);
           }}
         />
       </div>

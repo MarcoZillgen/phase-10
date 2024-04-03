@@ -18,7 +18,7 @@ export default function PlayerColumn({
   setScoreHistory,
 }: PlayerColumnProps) {
   return (
-    <div className="w-full bg-zinc-800">
+    <div className="w-full bg-zinc-800 min-w-16">
       <input
         className="w-full text-center py-3 bg-zinc-900 text-xl outline-none focus:bg-zinc-950 transition duration-200"
         placeholder="Name"
